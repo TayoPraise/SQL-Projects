@@ -7,3 +7,6 @@ This repo contains solutions to the [Danny Ma's](https://8weeksqlchallenge.com/)
 ***
 
 ### [Case Study #1: Danny's Diner](https://github.com/TayoPraise/SQL-Projects/tree/main/8%20Weeks%20Challenge/Case%20Study%20%231%20(Danny's%20Diner))
+
+
+![Case study 1](https://user-images.githubusercontent.com/107925747/209580664-5c18bc7a-1e18-4755-96db-a02360a12012.png)
