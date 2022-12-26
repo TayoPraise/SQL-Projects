@@ -26,9 +26,9 @@ ORDER BY customer_id;
 
 | customer |  total_spent |
 | :------: |   :-------:  |
-|   A      |	$76         |
-|   B      |	$74         |
-|   C      |	$36         |
+|   A      |	$76       |
+|   B      |	$74       |
+|   C      |	$36       |
 
 ***
 
@@ -48,7 +48,7 @@ GROUP BY 1;
 #### Answer:
 
 | customer |  number of days visited |
-| :------: |    -------:  |
+| :------: |    -------:    |
 |   A      |	4           |
 |   B      |	6           |
 |   C      |	2           |
@@ -117,8 +117,8 @@ LIMIT 1;
 #### Answer:
 
 | product name |  number or orders |
-| :------:		 |   -------:        |
-|   ramen      |	8                |
+| :------:     |   -------:        |
+|   ramen      |	8          |
 
 ***
 
@@ -156,11 +156,11 @@ GROUP BY 1,3;
 
 #### Answer:
 
-| customer |  product name |  number of times ordered  |
-| :------: |   :-------:   |     :--------:						 |
-|   A      |	ramen        |			3								  	 |
-|   B      |	sushi,curry,ramen |	2                    | 
-|   C      |	ramen         |			3                    |
+| customer |  product name        |  number of times ordered  |
+| :------: |   :-------:          |     :--------:	      |
+|   A      |	ramen             |	3		      |
+|   B      |	sushi,curry,ramen |	2                     | 
+|   C      |	ramen             |	3                     |
 
 ***
 
@@ -197,10 +197,10 @@ ORDER BY 1;
 
 #### Answer:
 
-| customer | join_date	   |  order_date		  |  product name			|
-| :------: |   :-------:   |    :--------:		|		:------:				|
-|   A      |	2021-01-07   |		2021-01-10		|		ramen						|
-|   B      |	2021-01-07	 |		2021-01-11    | 	sushi						|
+| customer | join_date	      |  order_date    |  product name	|
+| :------: |   :-------:      |    :--------:  |   :------:	|
+|   A      |	2021-01-07    |	  2021-01-10   |    ramen	|
+|   B      |	2021-01-07    |	  2021-01-11   |    sushi	|
 
 ***
 
@@ -237,10 +237,10 @@ ORDER BY 1;
 
 #### Answer:
 
-| customer | join_date	   |  order_date		  |  product name			|
-| :------: |   :-------:   |    :--------:		|		:------:				|
-|   A      |	2021-01-07   |		2021-01-01		|		sushi, curry		|
-|   B      |	2021-01-07	 |		2021-01-04    | 	sushi						|
+| customer | join_date	   |  order_date     |  product name	|
+| :------: |   :-------:   |    :--------:   |	:------:	|
+|   A      |	2021-01-07 |	2021-01-01   |	sushi, curry	|
+|   B      |	2021-01-07 |	2021-01-04   | 	sushi		|
 
 ***
 
@@ -268,9 +268,9 @@ ORDER BY 1;
 #### Answer:
 
 | customer | number of items  | amount spent ($)|
-| :------: |   :-------:      |    :--------:		|
-|   A      |	2					      |		25						|
-|   B      |	3						    |		40				    |
+| :------: |   :-------:      |    :--------:	|
+|   A      |	2	      |		25	|
+|   B      |	3	      |		40	|
 
 ***
 
@@ -298,11 +298,11 @@ ORDER BY 1;
 
 #### Answer:
 
-| customer |  	points		|
+| customer |  	points	  |
 | :------: |   :-------:  |
-|   A      |	860	        |
-|   B      |	940         |
-|   C      |	360         |
+|   A      |	860	  |
+|   B      |	940       |
+|   C      |	360       |
 
 ***
 
@@ -346,10 +346,10 @@ ORDER BY 1;
 
 #### Answer:
 
-| customer |  points		  |
+| customer |  points	  |
 | :------: |   :-------:  |
-|   A      |	1370        |
-|   B      |	820         |
+|   A      |	1370      |
+|   B      |	820       |
 
 
 ***
