@@ -230,7 +230,7 @@ ORDER BY 1;
 
 #### Steps:
 - Create **TEMP TABLE** called ```orderBefore_cte``` which ```joins``` the **sales table** with the **members table** using ```customer_id``` to get the **customer join date**
-- In the **orderBefore_cte**, add a ```windows function``` that **RANK** customers and **orders* it by their **order_date** in ```DESC
+- In the **orderBefore_cte**, add a ```windows function``` that **RANK** customers and **orders* it by their **order_date** in ```DESC```
 - Create a join on the **orderBefore_cte** with the **menu table** using ```product_id``` to get the **product_name***
 - From the **orderBefore_cte**, select the **customer_id**, **join_date**, **order_date** and ```string_agg``` **product_name** for **order_date** with more than 1 item 
 - Apply a ```where clause``` on the **rank** column to filter value of **1**
