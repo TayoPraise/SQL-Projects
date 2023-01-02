@@ -10,6 +10,9 @@
 -- Selecting the schema I'm working in
 
 SET search_path TO pizza_runner;
+
+
+--TABLE: customer_orders
   
 -- Create a new table containing my cleaned data from customer_orders
 -- Functions used: CASE WHEN
@@ -32,11 +35,16 @@ CREATE TABLE cl_customer_orders AS(
 	       ELSE extras
 	     END extras
 	   , order_time
-FROM pizza_runner.customer_orders);
+	FROM pizza_runner.customer_orders
+	);
+
+
+
+--TABLE: runner_orders
 
 -- Create a new table containing my cleaned data from runner_orders
 -- Functions used: CASE WHEN, TRIM, Wildcards (%), ALTER table, ALTER data types
--- Cleaning the null values & null string in the pickup_time, distance & duration
+-- Cleaning the null values & null string in the pickup_time, distance, duration & cancellation
 -- Trim the distance metric unit (km) and duration unit (minute, etc) from their respective columns
 
 
@@ -66,14 +74,15 @@ CREATE TABLE cl_runner_orders AS(
 		   THEN ''
 	       ELSE cancellation
 	     END cancellation
-FROM pizza_runner.runner_orders);
+	FROM pizza_runner.runner_orders
+	);
 
 -- Alter table & columns to change the data types of the above cleaned columns for better analysis
 
 ALTER TABLE cl_runner_orders
 	ALTER COLUMN pickup_time TYPE timestamp without time zone
 		USING pickup_time::timestamp,
-    ALTER COLUMN distance TYPE NUMERIC
+	ALTER COLUMN distance TYPE NUMERIC
 		USING distance::numeric,
 	ALTER COLUMN duration TYPE INT
 		USING duration::integer;
