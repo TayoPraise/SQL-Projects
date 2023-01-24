@@ -2,8 +2,8 @@ This repo contains solutions to the [Danny Ma's](https://8weeksqlchallenge.com/)
 
 
 ### 📚 Table of Content
-- [Case Study #1](#case-study-#1)
-- [Case Study #2](#case-study-#2)
+- [Case Study #1: Danny's Diner](#case-study-1-dannys-diner)
+- [Case Study #2: Pizza Runners](#case-study-2-pizza-runners)
 
 ***
 
@@ -14,7 +14,9 @@ This repo contains solutions to the [Danny Ma's](https://8weeksqlchallenge.com/)
 
 ***
 
-### [Case Study #2: Pizza_Runners](https://github.com/TayoPraise/SQL-Projects/tree/main/8%20Weeks%20Challenge/Case%20Study%20%232%20(Pizza_runner))
+### [Case Study #2: Pizza Runners](https://github.com/TayoPraise/SQL-Projects/tree/main/8%20Weeks%20Challenge/Case%20Study%20%232%20(Pizza_runner))
 
 
-!<img src="https://user-images.githubusercontent.com/107925747/214230576-ed28e96e-13e5-4535-a285-caad80c2006b.png" alt="image" width="500" height="520">
+<img src="https://user-images.githubusercontent.com/107925747/214230576-ed28e96e-13e5-4535-a285-caad80c2006b.png" alt="image" width="500" height="520">
+
+
