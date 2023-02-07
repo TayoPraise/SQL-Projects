@@ -1,3 +1,6 @@
+SET SEARCH_PATH = pizza_runner;
+
+
 -- 1. How many pizzas were ordered?
 
 SELECT COUNT(pizza_id) "Number of pizzas ordered"
