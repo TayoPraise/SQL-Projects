@@ -1,8 +1,10 @@
+SET SEARCH_PATH = pizza_runner;
+
 --1  How many runners signed up for each 1 week period? (i.e. week starts 2021-01-01)
 
 SELECT to_char(registration_date::date, 'ww')::int AS weeks
 	   , COUNT(runner_id) "Signed up runners"
-FROM pizza_runner.runners
+FROM runners
 GROUP BY 1
 ORDER BY 1;
 
@@ -11,8 +13,8 @@ ORDER BY 1;
 WITH pickup_diff as (
 		SELECT runner_id
 			   , EXTRACT(minutes FROM pickup_time - order_time) pickup_diff
-		FROM pizza_runner.cl_runner_orders ro
-		JOIN pizza_runner.cl_customer_orders co
+		FROM cl_runner_orders ro
+		JOIN cl_customer_orders co
 		USING (order_id)
 		WHERE pickup_time is not null
 		)
@@ -30,8 +32,8 @@ SELECT order_id
 	   , COUNT(pizza_id) items_in_order
 	   , EXTRACT(minutes FROM pickup_time - order_time) "order_pickup (mins)"
 	   , (EXTRACT(minutes FROM pickup_time - order_time) / COUNT(pizza_id))::INT AS "avg_time_per_order (mins)"
-FROM pizza_runner.cl_customer_orders
-JOIN pizza_runner.cl_runner_orders
+FROM cl_customer_orders
+JOIN cl_runner_orders
 USING(order_id)
 WHERE pickup_time is not null
 GROUP BY 1,3
@@ -41,8 +43,8 @@ ORDER BY 2 DESC, 3 DESC;
 
 SELECT customer_id
 	   , ROUND(AVG(distance), 2) "average distance tavelled"
-FROM pizza_runner.cl_customer_orders co
-JOIN pizza_runner.cl_runner_orders
+FROM cl_customer_orders co
+JOIN cl_runner_orders
 USING (order_id)
 WHERE distance is not null
 GROUP BY 1
@@ -53,7 +55,7 @@ ORDER BY 1;
 SELECT MAX(duration) "longest delivery time"
 	   , MIN(duration) "shortest delivery time"
 	   , MAX(duration) - MIN(duration) "delivery time difference"
-FROM pizza_runner.cl_runner_orders;
+FROM cl_runner_orders;
 
 --6 What was the average speed for each runner for each delivery and do you notice any trend for these values?
 
@@ -64,8 +66,8 @@ WITH duration_hr AS (
 				   , distance
 				   , duration
 				   , ROUND(duration::numeric / 60, 2) duration_hr
-			FROM pizza_runner.cl_runner_orders
-			JOIN pizza_runner.cl_customer_orders
+			FROM cl_runner_orders
+			JOIN cl_customer_orders
 			USING(order_id)
 			WHERE cancellation = ''
 	 		)
@@ -94,7 +96,7 @@ WITH fulfilled_orders AS (
 	   	 WHEN cancellation = ''
 		 THEN order_id
 	     END) fulfilled_orders 
-FROM pizza_runner.cl_runner_orders
+FROM cl_runner_orders
 GROUP BY runner_id)
 
 
